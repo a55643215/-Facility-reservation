@@ -101,46 +101,49 @@ def handle_postback(event):
 
 
 @app.before_first_request
+
 def init_products():
-    service_item_count = db.session.query(Service_Item).count()
-    if service_item_count > 0:
-        pass
-    else:
-        init_data=[
-            Service_Item(
-                        category='SPA',
-                        img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                        title = '塑身纖體',
-                        duration = '諮詢30min',
-                        description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                        price =200,
-                         ),
-            Service_Item(
-                        category='SPA',
-                        img_url = 'https://i.imgur.com/dm4SFcH.jpg',
-                        title = '雷射光療',
-                        duration = '諮詢30min',
-                        description =  '全像超皮秒雷射/皮冷極光雷射/淨白煥膚',
-                        price =200,
-            ),
-            Service_Item(
-                        category='美甲美睫',
-                        img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                        title = '塑身纖體',
-                        duration = '諮詢30min',
-                        description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                        price =200,
-            ),
-            Service_Item(
-                        category='美甲美睫',
-                        img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                        title = '塑身纖體',
-                        duration = '諮詢30min',
-                        description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                        price =200,
-            )]
-        db.session.add(init_data)
-        db.session.commit()
+    with app.app_context():
+
+        service_item_count = db.session.query(Service_Item)
+        if service_item_count :
+            pass
+        else:
+            init_data=[
+                Service_Item(
+                            category='SPA',
+                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
+                            title = '塑身纖體',
+                            duration = '諮詢30min',
+                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
+                            price =200,
+                            ),
+                Service_Item(
+                            category='SPA',
+                            img_url = 'https://i.imgur.com/dm4SFcH.jpg',
+                            title = '雷射光療',
+                            duration = '諮詢30min',
+                            description =  '全像超皮秒雷射/皮冷極光雷射/淨白煥膚',
+                            price =200,
+                ),
+                Service_Item(
+                            category='美甲美睫',
+                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
+                            title = '塑身纖體',
+                            duration = '諮詢30min',
+                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
+                            price =200,
+                ),
+                Service_Item(
+                            category='美甲美睫',
+                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
+                            title = '塑身纖體',
+                            duration = '諮詢30min',
+                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
+                            price =200,
+                )]
+            db.session.add(init_data)
+            db.session.commit()
 
 
 if __name__ == '__main__':
