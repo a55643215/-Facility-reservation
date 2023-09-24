@@ -2,7 +2,7 @@ from cachelib import SimpleCache
 from linebot.models import *
 from database import db_session
 from models.product import Products
-from app import *
+# from app import *
 
 cache = SimpleCache()
 

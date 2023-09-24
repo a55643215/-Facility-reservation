@@ -8,7 +8,7 @@ import os
 
 currend_dir = os.path.dirname(__file__)
 db_path = r'sqlite:///{}/lstore.db'.format(currend_dir)
-engine = create_engine(db_path, convert_unicode=True)
+engine = create_engine(db_path)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))

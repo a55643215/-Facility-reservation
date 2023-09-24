@@ -62,7 +62,7 @@ class Products(Base):
                             style='primary',
                             color='#1DB446',
                             action=URIAction(label='加入購物車',
-                                             uri='line://oaMessage/{base_id}/?{message}'.format(base_id='@030clcsu',
+                                             uri='line://oaMessage/{base_id}/?{message}'.format(base_id='@068qsxbb',
                                                                                                 message=quote("{product}, 請輸入購買數量:".format(product=product.name)))),
                                              
                         )
