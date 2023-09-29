@@ -105,44 +105,44 @@ def handle_postback(event):
 def init_products():
     with app.app_context():
 
-        service_item_count = db.session.query(Service_Item)
-        if service_item_count :
+        service_item_count = db.session.query(Service_Item).count()
+        if service_item_count >0 :
             pass
         else:
             init_data=[
                 Service_Item(
                             category='SPA',
-                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                            title = '塑身纖體',
-                            duration = '諮詢30min',
-                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                            price =200,
+                            img_url = 'https://i.imgur.com/XHkio0m.jpg',
+                            title = '全身指壓',
+                            duration = '90min',
+                            description =  '指壓屬於東方式按摩，是一種強調經絡、穴道等特定位置的加壓按摩，透過按摩師的手指指尖、指腹、掌根等部位，以按壓、捏、敲打、搓揉等方式，刺激人體特定部位、放鬆深層肌肉，幫助能量經絡順暢流動、促進神經機能。',
+                            price =100,
                             ),
                 Service_Item(
                             category='SPA',
-                            img_url = 'https://i.imgur.com/dm4SFcH.jpg',
-                            title = '雷射光療',
-                            duration = '諮詢30min',
-                            description =  '全像超皮秒雷射/皮冷極光雷射/淨白煥膚',
-                            price =200,
+                            img_url = 'https://i.imgur.com/svAaI3j.jpg',
+                            title = '足底按摩',
+                            duration = '90min',
+                            description =  '「腳底按摩」能藉著刺激各部位反射區，使血液循環順暢，排除積聚在體內的廢物或毒素，使新陳代謝作用正常運作，達到治療的效果。',
+                            price =100,
                 ),
                 Service_Item(
                             category='美甲美睫',
-                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                            title = '塑身纖體',
-                            duration = '諮詢30min',
-                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                            price =200,
+                            img_url = 'https://i.imgur.com/9b42t9d.png',
+                            title = '美甲',
+                            duration = '一次',
+                            description =  '打造專屬個人風格的亮麗指甲',
+                            price =100,
                 ),
                 Service_Item(
                             category='美甲美睫',
-                            img_url = 'https://i.imgur.com/y3S5t51.jpg',
-                            title = '塑身纖體',
-                            duration = '諮詢30min',
-                            description =  '冷凍溶脂/EMBODY核心美麗/So纖筆/Liposonix/CM Slim偵腹肌',
-                            price =200,
+                            img_url = 'https://i.imgur.com/auEtnrJ.jpg',
+                            title = '美睫',
+                            duration = '一次',
+                            description =  '使您的雙眼閃閃動人',
+                            price =100,
                 )]
-            db.session.add(init_data)
+            db.session.add_all(init_data)
             db.session.commit()
 
 
