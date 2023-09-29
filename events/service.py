@@ -19,7 +19,7 @@ def service_category_event(event):
           template = ImageCarouselTemplate(
             columns = [
                  ImageCarouselColumn(
-                    image_url = 'https://i.imgur.com/YwIvYjP.jpg',
+                    image_url = 'https://i.imgur.com/yQhVPNj.jpg',
                     action = PostbackAction(
                         label = 'SPA',
                         display_text = 'SPA',
@@ -27,7 +27,7 @@ def service_category_event(event):
                     )
                  ),
                  ImageCarouselColumn(
-                    image_url = 'https://i.imgur.com/1eud8vr.jpg',
+                    image_url = 'https://i.imgur.com/tE5e5p3.jpg',
                     action = PostbackAction(
                         label = '美甲美睫',
                         display_text = '美甲美睫',
