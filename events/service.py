@@ -303,7 +303,7 @@ def service_confirmed_event(event):
                 return
 
             reservation = Reservation(
-                user_id=user.id,
+                user_id=user.line_id,
                 booking_service_category=f'{booking_service.category}',
                 booking_service=f'{booking_service.title} {booking_service.duration}',
                 booking_datetime=booking_datetime)
