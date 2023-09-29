@@ -237,7 +237,7 @@ def service_confirm_event(event):
 
 
 def is_booked(event, user):
-    reservation = Reservation.query.filter(Reservation.user_id == user.id,
+    reservation = Reservation.query.filter(Reservation.user_id == user.line_id,
                                            Reservation.is_canceled.is_(False),#代表沒有被取消
                                            Reservation.booking_datetime > datetime.datetime.now()).first()
                                            #需要大於當下的時間.first()是會回傳第一筆資料

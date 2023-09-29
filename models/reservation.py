@@ -6,7 +6,7 @@ class Reservation(db.Model):
     __tablename__ = 'reservation'
 
     id = db.Column(db.Integer, primary_key = True) #設定他為主鍵
-    user_id = db.Column(db.String, db.ForeignKey('user.id'))#設定他為副鍵 
+    user_id = db.Column(db.String(50), nullable= False)#設定他為副鍵 
     booking_service_category = db.Column(db.String(50), nullable= False) 
     booking_service = db.Column(db.String(150), nullable = False) 
     booking_datetime = db.Column(db.DateTime, nullable = False) 
