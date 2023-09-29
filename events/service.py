@@ -208,10 +208,8 @@ def service_select_time_event(event):
 def service_confirm_event(event):
     services = db.session.query(Service_Item).all()
     data = dict(parse_qsl(event.postback.data))
-    print(int(data["service_id"]))
     
     for service in services:
-        print(service.id)
         if service.id == int(data['service_id']):
             booking_service = service#取得要預約的服務項目資料，會出現1234對應到上面的service
 
