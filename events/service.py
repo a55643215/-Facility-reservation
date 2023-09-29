@@ -116,7 +116,7 @@ def service_event(event):
                         "action": {
                         "type": "postback",
                         "label": "預約",
-                        "data": f"action=select_date&service_id={service}",
+                        "data": f"action=select_date&service_id={service.id}",
                         "displayText": f"我想預約【{service.title} {service.duration}】"
                         },
                         "color": "#b28530"
