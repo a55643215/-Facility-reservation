@@ -2,7 +2,7 @@ from flask import Flask,request,abort
 from events.service import *
 from line_bot_api import *
 # from events.basic import *
-# from events.admin import *
+from events.admin import *
 from extensions import db, migrate
 from models.user import User    
 from models.service_item import Service_Item
@@ -63,11 +63,11 @@ def handle_message(event):
     if message_text =='@預約服務':
         service_category_event(event)
 
-    # elif message_text.startswith('*'):
-    #     if event.source.user_id not in ['U135d0047f682b28ef4001bcb47d0d21f']:
-    #         return
-    #     if message_text in ['*data', '*d']:
-    #         list_reservation_event(event)
+    elif message_text.startswith('*'):
+        if event.source.user_id not in ['U2fa6f47b13ecebb5acb3b4119246db6c']:
+            return
+        if message_text in ['*data', '*d']:
+            list_reservation_event(event)
     elif message_text == '@取消預約':
         pass
 
